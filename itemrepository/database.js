@@ -46,20 +46,21 @@ function getClient() {
         database: process.env.POSTGRES_DB
     });
 }
-
-var client = getClient();
-client.connect((err) => {
-    if (err) {
-        console.log('failed to connect to postgres!');
-    } else {
-        console.log('successfully connected to postgres!');
-        client.query('CREATE TABLE IF NOT EXISTS Item (ID SERIAL PRIMARY KEY, Name VARCHAR(32) NOT NULL, InsertDate TIMESTAMP NOT NULL);', (err) => {
-            if (err) {
-                console.log('error creating Item table!')
-            } else {
-                console.log('successfully created item table!')
-            }
-            client.end();
-        });
-    }
-});
+setTimeout(() => {
+    var client = getClient();
+    client.connect((err) => {
+        if (err) {
+            console.log('failed to connect to postgres!');
+        } else {
+            console.log('successfully connected to postgres!');
+            client.query('CREATE TABLE IF NOT EXISTS Item (ID SERIAL PRIMARY KEY, Name VARCHAR(32) NOT NULL, InsertDate TIMESTAMP NOT NULL);', (err) => {
+                if (err) {
+                    console.log('error creating Item table!')
+                } else {
+                    console.log('successfully created item table!')
+                }
+                client.end();
+            });
+        }
+    });
+}, 3000);
