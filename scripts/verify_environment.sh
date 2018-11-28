@@ -19,5 +19,9 @@ printf "npm version " && npm --version | tee -a logfile.log
 printf "nodejs version " >> logfile.log
 #Shows current version of nodejs
 printf "nodejs version " && nodejs --version | tee -a logfile.log
+#For readability in log file
+printf "aws version " >> logfile.log
+#Shows current version of aws
+printf "aws version " && aws --version | tee -a logfile
 #Message display and current date and time at end of script
 printf "Script ends at: " && date | tee -a logfile.log
