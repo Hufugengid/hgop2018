@@ -1,4 +1,5 @@
 *.tfstate
 .terraform
 terraform.tfstate.backup
-/node_modules
+/game-api/node_modules
+/game-api/package-lock.json
