@@ -2,10 +2,11 @@
   "name": "web",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "lucky21.js",
   "scripts": {
-    "test": "jest"
-  },
+    "test:unit": "jest --testRegex *.unit-test.js"
+     
+ },
   "author": "",
   "license": "ISC",
   "dependencies": {
