@@ -8,7 +8,7 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": jest {
     "express": "^4.16.2",
     "pg": "^7.6.1"
   }
