@@ -2,9 +2,9 @@
   "name": "web",
   "version": "1.0.0",
   "description": "",
-  "main": "lucky21.js",
+  "main": "app.js",
   "scripts": {
-    "test:unit": "jest --testRegex *.unit-test.js"
+    "test:unit": "jest --testRegex *.unit-test.js || true"
      
  },
   "author": "",
