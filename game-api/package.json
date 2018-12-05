@@ -5,8 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test:unit": "jest --testRegex *.unit-test.js || true"
-     
- },
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -14,6 +13,11 @@
     "pg": "^7.6.1"
   },
   "devDependencies": {
+    "eslint": "^5.9.0",
     "jest": "^23.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Hufugengid/hgop2018.git"
   }
 }
