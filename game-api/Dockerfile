@@ -9,6 +9,6 @@ COPY database.js database.js
 #Tells dockerfile to copy the appfile in the directory
 COPY app.js app.js
 #Runs the npm install to fetch the packages
-RUN npm install
+RUN npm install --production
 #Provides defaults for this executable container
 CMD node app.js
