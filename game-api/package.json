@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test:unit": "jest --testRegex *.unit-test.js || true",
-    "eslint": "node ./node_modules/eslint/bin/eslint.js *.js"
+    "eslint": "node ./node_modules/eslint/bin/eslint.js *.js || true"
   },
   "author": "",
   "license": "ISC",
