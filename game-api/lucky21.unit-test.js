@@ -119,7 +119,7 @@ test('Player should have won, 3 aces in hand', () =>{
   expect(game.getCardsValue(game)).toBe(21);
   expect(game.playerWon(game)).toBe(true);
 });
-
+// eslint-disable-next-line
 test('should return player cards value, check if getCardsValue works as intended', () =>{
   const deck = deckConstructor();
   const dealer = dealerConstructor();
@@ -130,7 +130,7 @@ test('should return player cards value, check if getCardsValue works as intended
   ];
   expect(game.getCardsValue(game)).toBe(21);
 });
-
+// eslint-disable-next-line
 test('should return player cards value, check if getCardsValue works as intended', () =>{
   const deck = deckConstructor();
   const dealer = dealerConstructor();
@@ -241,7 +241,7 @@ test('should return the players cards on hand', () =>{
   const game = lucky21Constructor(deck, dealer);
   game.state.cards = [
     '10S', '07D', '03S',
-  ];
+  ]; // eslint-disable-next-line
   expect(['10S', '07D', '03S']).toEqual(expect.arrayContaining(game.getCards(game)));
 });
 

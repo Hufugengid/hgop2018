@@ -19,7 +19,7 @@ module.exports = {
   getItems: (onGet) => {
     const client = getClient();
     client.connect(() => {
-      const query = {
+      const query = { // eslint-disable-next-line
         text: 'SELECT ID, Name, InsertDate FROM Item ORDER BY InsertDate DESC LIMIT 10;',
         rowMode: 'array',
       };
@@ -53,7 +53,7 @@ setTimeout(() => {
       console.log('failed to connect to postgres!');
     } else {
       console.log('successfully connected to postgres!');
-      client.query('CREATE TABLE IF NOT EXISTS Item (ID SERIAL PRIMARY KEY, Name VARCHAR(32) NOT NULL, InsertDate TIMESTAMP NOT NULL);', (err) => {
+      client.query('CREATE TABLE IF NOT EXISTS Item (ID SERIAL PRIMARY KEY, Name VARCHAR(32) NOT NULL, InsertDate TIMESTAMP NOT NULL);', (err) => { // eslint-disable-line
         if (err) {
           console.log('error creating Item table!');
         } else {
