@@ -54,7 +54,7 @@ resource "aws_instance" "game_server" {
   }
   # Gets the docker file and puts it in the desired destination. Tells what connection is needed and where the key is located.
   provisioner "file" {
-    source      = "/var/lib/jenkins/workspace/freestyle-hufugengi/repository/scripts/docker-compose.yml"
+    source      = "/var/lib/jenkins/workspace/freestyle-hufugengi/repository/docker-compose.yml"
     destination = "/home/ubuntu/docker-compose.yml"
 
     connection {

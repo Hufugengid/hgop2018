@@ -37,7 +37,7 @@ module.exports = {
     return;
   },
 };
-//Function getclient for new client
+// Function getclient for new client
 function getClient() {
   return new Client({
     host: 'my_postgres_container',
