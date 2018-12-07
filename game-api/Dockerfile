@@ -2,12 +2,8 @@
 FROM node:dubnium
 # Set the working directory to /code
 WORKDIR /code
-#Tells dockerfile to copy the jsonfile in the directory
-COPY package.json package.json
-#Tells dockerfile to copy the databasefile in the directory
-COPY database.js database.js
-#Tells dockerfile to copy the appfile in the directory
-COPY app.js app.js
+#Tells dockerfile to copy all files in the directory
+COPY . .
 #Runs the npm install to fetch the packages
 RUN npm install --production
 #Provides defaults for this executable container
