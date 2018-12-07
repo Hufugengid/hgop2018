@@ -174,12 +174,12 @@ module.exports = (context) => {
     // sensitive data that the player should not know.
     // This is what is returned by the API when the player GETs /state
     getState: (game) => {
-    return {
+      return {
         cards: this.getCards(game),
         card: this.getCard(game),
         finished: this.isGameOver(game),
-        //# TODO
-    }
-},
+        // # TODO
+      };
+    },
   };
 };
