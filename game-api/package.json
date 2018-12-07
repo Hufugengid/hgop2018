@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test:unit": "jest --testRegex *.unit-test.js || true",
-    "eslint": "node ./node_modules/eslint/bin/eslint.js *.js || true"
+    "test:unit": "jest --testRegex .*.unit-test.js",
+    "eslint": "node ./node_modules/eslint/bin/eslint.js *.js"
   },
   "author": "",
   "license": "ISC",
