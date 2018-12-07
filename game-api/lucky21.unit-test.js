@@ -4,7 +4,9 @@ const lucky21Constructor = require('./lucky21.js');
 const inject = require('./inject.js');
 
 function createGame(deck) {
-  const dealer = dealerConstructor();
+  const dealer = dealerConstructor(inject({
+    random: () => {},
+  }));
   dealer.shuffle = () => {};
   return lucky21Constructor(inject({
     dealer: () => dealer,
