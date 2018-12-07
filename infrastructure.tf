@@ -63,7 +63,17 @@ resource "aws_instance" "game_server" {
       private_key = "${file("~/.aws/GameKeyPair.pem")}"
     }
   }
-  
+  # Gets the docker file and puts it in the desired destination. Tells what connection is needed and where the key is located.
+  provisioner "file" {
+    source      = "/var/lib/jenkins/workspace/freestyle-hufugengi/repository/docker-compose.yml"
+    destination = "/home/ubuntu/docker-compose.yml"
+
+    connection {
+      type        = "ssh"
+      user        = "ubuntu"
+      private_key = "${file("~/.aws/GameKeyPair.pem")}"
+    }
+  }
   # This is used to run commands on the instance we just created.
   # Terraform does this by SSHing into the instance and then executing the commands.
   # Since it can take time for the SSH agent on machine to start up we let Terraform
