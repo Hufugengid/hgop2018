@@ -51,6 +51,16 @@ resource "aws_instance" "game_server" {
       user        = "ubuntu"
       private_key = "${file("~/.aws/GameKeyPair.pem")}"
     }
+    # Gets the api script and puts it in the desired destination. Tells what connection is needed and where the key is located.
+  provisioner "file" {
+    source      = "/var/lib/jenkins/workspace/freestyle-hufugengi/repository/scripts/docker_compose_up.sh"
+    destination = "/home/ubuntu/docker_compose_up.sh"
+
+    connection {
+      type        = "ssh"
+      user        = "ubuntu"
+      private_key = "${file("~/.aws/GameKeyPair.pem")}"
+    }
   }
   # Gets the docker file and puts it in the desired destination. Tells what connection is needed and where the key is located.
   provisioner "file" {
@@ -73,6 +83,7 @@ resource "aws_instance" "game_server" {
   provisioner "remote-exec" {
     inline = [
       "chmod +x /home/ubuntu/initialize_game_api_instance.sh",
+      "chmod +x /home/ubuntu/docker_compose_up.sh",
     ]
 
     connection {
