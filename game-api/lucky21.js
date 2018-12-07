@@ -1,19 +1,19 @@
 module.exports = (context) => {
-  let deckConstructor = context('deck');
-  let deck = deckConstructor(context);
-  
-  let dealerConstructor = context('dealer');
-  let dealer = dealerConstructor(context);
-  
+  const deckConstructor = context('deck');
+  const deck = deckConstructor(context);
+
+  const dealerConstructor = context('dealer');
+  const dealer = dealerConstructor(context);
+
   dealer.shuffle(deck);
-  let card0 = dealer.draw(deck);
-  let card1 = dealer.draw(deck);
-  let state = {
+  const card0 = dealer.draw(deck);
+  const card1 = dealer.draw(deck);
+  const state = {
     deck: deck,
     dealer: dealer,
     cards: [
-        card0,
-        card1,
+      card0,
+      card1,
     ],
     // The card that the player thinks will exceed 21.
     card: undefined,

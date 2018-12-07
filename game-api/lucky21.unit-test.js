@@ -1,7 +1,7 @@
 const deckConstructor = require('./deck.js');
 const dealerConstructor = require('./dealer.js');
 const lucky21Constructor = require('./lucky21.js');
-const inject = require('./inject.js')
+const inject = require('./inject.js');
 
 function createGame(deck) {
   const dealer = dealerConstructor();
@@ -9,14 +9,14 @@ function createGame(deck) {
   return lucky21Constructor(inject({
     dealer: () => dealer,
     deck: () => deck,
-  }))
+  }));
 }
 
 test('a new game should have 50 cards left in the deck', () => {
   const game = createGame([
     '01H', '02H', '03H', '04H', '05H', '06H', '07H',
-    '08H', '09H', '10H', '11H', '12H', '13H', 
-    '01C', '02C', '03C', '04C', '05C', '06C', '07C', 
+    '08H', '09H', '10H', '11H', '12H', '13H',
+    '01C', '02C', '03C', '04C', '05C', '06C', '07C',
     '08C', '09C', '10C', '11C', '12C', '13C',
     '01D', '02D', '03D', '04D', '05D', '06D', '07D',
     '08D', '09D', '10D', '11D', '12D', '13D',
