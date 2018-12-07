@@ -54,7 +54,7 @@ resource "aws_instance" "game_server" {
   }
     # Gets the api script and puts it in the desired destination. Tells what connection is needed and where the key is located.
   provisioner "file" {
-    source      = "/var/lib/jenkins/workspace/freestyle-hufugengi/repository/scripts/docker_compose_up.sh"
+    source      = "/var/lib/jenkins/workspace/freestyle-hufugengi/ #repository/scripts/docker_compose_up.sh"
     destination = "/home/ubuntu/docker_compose_up.sh"
 
     connection {
