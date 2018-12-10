@@ -1,3 +1,13 @@
+# Top of file
+variable "environment" {
+  type = "string"
+}
+
+# Usages
+name   = "GameSecurityGroup_${var.environment}"
+
+Name = "GameServer_${var.environment}"
+
 # This tells us that we want to use aws cloud service as a provider.
 # The cloud services region is us-east-1.
 provider "aws" {
