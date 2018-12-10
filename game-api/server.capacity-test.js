@@ -17,7 +17,7 @@ const playGames = (url, count, done) => {
 
   helper.playGame(url, playGameCallback);
 };
-
+// eslint-disable-next-line
 test('play ' + gameCount + ' games within ' + (timeout / 1000) + ' seconds', function(done) {
   playGames(process.env.API_URL, gameCount, done);
 }, timeout);
