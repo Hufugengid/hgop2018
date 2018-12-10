@@ -3,3 +3,4 @@
 terraform.tfstate.backup
 /game-api/node_modules
 /game-api/package-lock.json
+/game-api/coverage

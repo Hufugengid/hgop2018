@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test:unit": "jest --testRegex .*.unit-test.js",
+    "test:unit": "jest --coverage --testRegex .*.unit-test.js",
     "eslint": "node ./node_modules/eslint/bin/eslint.js *.js"
   },
   "author": "",
