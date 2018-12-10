@@ -13,8 +13,6 @@ node {
     }
     stage("test"){
     sh "npm run test:unit --prefix game-api"
-    }
-    stage("clover"){
     step([
     $class: 'CloverPublisher',
     cloverReportDir: 'coverage',
