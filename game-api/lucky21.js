@@ -175,11 +175,11 @@ module.exports = (context) => {
     // This is what is returned by the API when the player GETs /state
     getState: (game) => {
       return {
-        cards: this.getCards(game),
-        card: this.getCard(game),
-        finished: this.isGameOver(game),
+        cards: game.getCards(game),
+        card: game.getCard(game),
+        finished: game.isGameOver(game),
         // # TODO
-      };
+      }
     },
   };
 };
