@@ -40,7 +40,7 @@ const guessUntilGameIsOver = (url, maxGuesses, done) => {
     });
   });
 };
-                              
+
 module.exports = {
   playGame: playGame,
   guessUntilGameIsOver: guessUntilGameIsOver,
