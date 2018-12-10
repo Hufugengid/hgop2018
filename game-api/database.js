@@ -53,8 +53,7 @@ module.exports = function(context) {
           });
         }
       });
-      return;            // Perform row count query with condition and call success function
-
+      return;
     },
     // Should call onSuccess with integer.
     getTotalNumberOfGames: (onSuccess, onError) => {
@@ -67,7 +66,7 @@ module.exports = function(context) {
           const query = { // eslint-disable-next-line
             text: 'Select COUNT(*) FROM GameResult G;',
           };
-          client.query(query, (err,res) => {
+          client.query(query, (err, res) => {
             if (err) {
               onError(err);
             } else {
@@ -90,7 +89,7 @@ module.exports = function(context) {
           const query = { // eslint-disable-next-line
             text: 'Select COUNT(*) FROM GameResult G WHERE G.Won = true;',
           };
-          client.query(query, (err,res) => {
+          client.query(query, (err, res) => {
             if (err) {
               onError(err);
             } else {
@@ -113,7 +112,7 @@ module.exports = function(context) {
           const query = { // eslint-disable-next-line
             text: 'Select COUNT(*) FROM GameResult G WHERE G.Score = 21;',
           };
-          client.query(query, (err,res) => {
+          client.query(query, (err, res) => {
             if (err) {
               onError(err);
             } else {
