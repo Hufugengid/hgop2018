@@ -3,11 +3,6 @@ variable "environment" {
   type = "string"
 }
 
-# Usages
-name   = "GameSecurityGroup_${var.environment}"
-
-Name = "GameServer_${var.environment}"
-
 # This tells us that we want to use aws cloud service as a provider.
 # The cloud services region is us-east-1.
 provider "aws" {
@@ -18,7 +13,7 @@ provider "aws" {
 # Creates a security group called game and uses the public port 22 and 3000, egress is outbound traffic for any.
 
 resource "aws_security_group" "game_security_group" {
-  name   = "GameSecurityGroup"
+  name   = "GameSecurityGroup_${var.environment}"
 
   ingress {
     from_port   = 22
@@ -49,7 +44,7 @@ resource "aws_instance" "game_server" {
   key_name               = "GameKeyPair"
   vpc_security_group_ids = ["${aws_security_group.game_security_group.id}"]
   tags {
-    Name = "GameServer"
+    Name = "GameServer_${var.environment}"
   }
   # Gets the api script and puts it in the desired destination. Tells what connection is needed and where the key is located.
   provisioner "file" {
