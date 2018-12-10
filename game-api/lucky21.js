@@ -179,7 +179,7 @@ module.exports = (context) => {
         card: game.getCard(game),
         finished: game.isGameOver(game),
         // # TODO
-      }
+      };
     },
   };
 };
