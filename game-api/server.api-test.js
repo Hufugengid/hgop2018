@@ -1,4 +1,4 @@
-const helper = require('./helper.lib-test.js');
+const helper = require('./server.lib-test.js');
 
 const timeout = 30000;
 

@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test:unit": "jest --coverage --testRegex .*.unit-test.js",
+    "test:api": "jest --coverage --testRegex .*.api-test.js",
     "eslint": "node ./node_modules/eslint/bin/eslint.js *.js"
   },
   "author": "",
@@ -16,7 +17,8 @@
   "devDependencies": {
     "eslint": "^5.10.0",
     "eslint-config-google": "^0.11.0",
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "request": "^2.88.0"
   },
   "repository": {
     "type": "git",
