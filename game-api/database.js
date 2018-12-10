@@ -53,22 +53,77 @@ module.exports = function(context) {
           });
         }
       });
-      return;
+      return;            // Perform row count query with condition and call success function
+
     },
     // Should call onSuccess with integer.
     getTotalNumberOfGames: (onSuccess, onError) => {
-      onSuccess(0);
-      // TODO week 3
+      const client = getClient();
+      client.connect((err) => {
+        if (err) {
+          onError(err);
+          client.end();
+        } else {
+          const query = { // eslint-disable-next-line
+            text: 'Select COUNT(*) FROM GameResult G;',
+          };
+          client.query(query, (err,res) => {
+            if (err) {
+              onError(err);
+            } else {
+              onSuccess(res.rows[0].count);
+            }
+            client.end();
+          });
+        }
+      });
+      return;
     },
     // Should call onSuccess with integer.
     getTotalNumberOfWins: (onSuccess, onError) => {
-      onSuccess(0);
-      // TODO week 3
+      const client = getClient();
+      client.connect((err) => {
+        if (err) {
+          onError(err);
+          client.end();
+        } else {
+          const query = { // eslint-disable-next-line
+            text: 'Select COUNT(*) FROM GameResult G WHERE G.Won = true;',
+          };
+          client.query(query, (err,res) => {
+            if (err) {
+              onError(err);
+            } else {
+              onSuccess(res.rows[0].count);
+            }
+            client.end();
+          });
+        }
+      });
+      return;
     },
     // Should call onSuccess with integer.
     getTotalNumberOf21: (onSuccess, onError) => {
-      onSuccess(0);
-      // TODO week 3
+      const client = getClient();
+      client.connect((err) => {
+        if (err) {
+          onError(err);
+          client.end();
+        } else {
+          const query = { // eslint-disable-next-line
+            text: 'Select COUNT(*) FROM GameResult G WHERE G.Score = 21;',
+          };
+          client.query(query, (err,res) => {
+            if (err) {
+              onError(err);
+            } else {
+              onSuccess(res.rows[0].count);
+            }
+            client.end();
+          });
+        }
+      });
+      return;
     },
   };
 };
