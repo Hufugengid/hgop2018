@@ -1,7 +1,7 @@
 const request = require('request');
 
 const playGame = (url, done) => {
-  request.post(url + ':3000/start', function(error, response, body) {
+  request.post('http://' + url + ':3000/start', function(error, response, body) {
     if (error) {
       done.fail(error);
       return;
@@ -18,7 +18,7 @@ const guessUntilGameIsOver = (url, maxGuesses, done) => {
     done.fail('the game is never over');
     return;
   }
-  request.get(url + ':3000/state', function(error, response, body) {
+  request.get('http://' + url + ':3000/state', function(error, response, body) {
     if (error) {
       done.fail(error);
       return;
@@ -30,7 +30,7 @@ const guessUntilGameIsOver = (url, maxGuesses, done) => {
     }
     const possibilities = ['guess21OrUnder', 'guessOver21'];
     const guess = possibilities[Math.floor(Math.random() * 2)];
-    request.post(url + ':3000/' + guess, function(error, response, body) {
+    request.post('http://' + url + ':3000/' + guess, function(error, response, body) {
       if (error) {
         done.fail(error);
         return;
