@@ -6,5 +6,5 @@ WORKDIR /code
 COPY . .
 #Runs the npm install to fetch the packages
 RUN npm install --production
-#Provides defaults for this executable container
-CMD node app.js
+# Give postgres time to setup before we try to migrate.
+CMD sleep 5 && npm run migratedb:pg && node app.js
