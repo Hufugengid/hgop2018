@@ -19,7 +19,7 @@ services:
       POSTGRES_USER: 'my_postgres_user'
       POSTGRES_PASSWORD: 'my_postgres_password'
   my_ui_container:
-    image: jakobj13/UI:${GIT_COMMIT}
+    image: jakobj13/ui:${GIT_COMMIT}
     ports: 
       - '4000:4000'
     environment:
