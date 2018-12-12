@@ -64,7 +64,7 @@ module.exports = function(context) {
           client.end();
         } else {
           const query = { // eslint-disable-next-line
-            text: 'Select COUNT(*) FROM GameResult G;',
+            text: 'Select COUNT(*) FROM "GameResult" "G";',
           };
           client.query(query, (err, res) => {
             if (err) {
@@ -87,7 +87,7 @@ module.exports = function(context) {
           client.end();
         } else {
           const query = { // eslint-disable-next-line
-            text: 'Select COUNT(*) FROM GameResult G WHERE G.Won = true;',
+            text: 'Select COUNT(*) FROM "GameResult" "G" WHERE "G"."Won" = true;',
           };
           client.query(query, (err, res) => {
             if (err) {
@@ -110,7 +110,7 @@ module.exports = function(context) {
           client.end();
         } else {
           const query = { // eslint-disable-next-line
-            text: 'Select COUNT(*) FROM GameResult G WHERE G.Score = 21;',
+            text: 'Select COUNT(*) FROM "GameResult" "G" WHERE "G"."Score" = 21;',
           };
           client.query(query, (err, res) => {
             if (err) {
