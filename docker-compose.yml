@@ -1,7 +1,7 @@
 version: '3'
 services:
   my_item_repository:
-    image: jakobj13/hgop:game_${GIT_COMMIT}
+    image: jakobj13/hgop:${GIT_COMMIT}
     ports:
     - '3000:3000'
     depends_on:
@@ -19,7 +19,7 @@ services:
       POSTGRES_USER: 'my_postgres_user'
       POSTGRES_PASSWORD: 'my_postgres_password'
   my_ui_container:
-    image: jakobj13/hgop:ui_${GIT_COMMIT}
+    image: jakobj13/ui:${GIT_COMMIT}
     ports: 
       - '4000:4000'
     environment:
