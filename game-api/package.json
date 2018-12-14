@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test:unit": "jest --coverage --testRegex .*.unit-test.js",
-    "test:api": "jest --coverage --testRegex .*.api-test.js",
-    "test:capacity": "jest --coverage --testRegex .*.capacity-test.js",
+    "test:unit": "jest --coverage --collectCoverageFrom=*.js --collectCoverageFrom=!*test.js --testRegex .*.unit-test.js",
+    "test:api": "jest --testRegex .*.api-test.js",
+    "test:capacity": "jest --testRegex .*.capacity-test.js",
     "eslint": "node ./node_modules/eslint/bin/eslint.js *.js",
     "migratedb:pg": "db-migrate --verbose --env pg --config ./database.json --migrations-dir ./migrations up"
   },
