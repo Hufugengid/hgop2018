@@ -13,7 +13,7 @@ module.exports = function(context) {
     res.append('Access-Control-Allow-Headers', 'Content-Type');
     next();
   });
-  
+
   app.get('/status', (req, res) => {
     res.statusCode = 200;
     res.send('The API is running!\n');
