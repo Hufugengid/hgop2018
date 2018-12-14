@@ -8,7 +8,7 @@ import {
   guess21OrUnder,
   guessOver21,
   convertCardNamesForSvg
-} from "../utils";
+} from "../utils.js";
 
 class AppContainer extends React.Component {
   constructor(props) {
